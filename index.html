@@ -1,0 +1,30 @@
+ <html>
+    <head>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+        <script src="./script.js"></script>
+        <link rel="shortcut icon" href="favicon.ico" type="" >
+        <title>Shopping Cart</title>
+    </head>
+    <body>
+        <div id="mainDiv">
+           
+
+        </div>
+        <script>
+            var data = getProducts();
+            localStorage.setItem("productList" ,JSON.stringify(data));
+
+            let isUserListExist = localStorage.getItem("userList");
+            console.log(isUserListExist);
+            (!isUserListExist) && localStorage.setItem("userList","[]");
+             CreateHeader();
+             createCart(data);
+             (!localStorage.getItem("cartList")) && localStorage.setItem("cartList" , "[]");
+             let OrderList = localStorage.getItem("OrderList");
+       (!OrderList && localStorage.setItem("OrderList","[]"));
+
+        </script>
+      
+       
+    </body>
+</html>
